@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="idendro-streamlit",
-    version="0.1.1",
+    version="0.1.2",
     author="Aurimas Racas",
     author_email="mail@aurimas.eu",
     description="Bi-directional Streamlit component for creating interactive dendrograms",

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: idendro-streamlit
-Version: 0.1.1
+Version: 0.1.2
 Summary: Bi-directional Streamlit component for creating interactive dendrograms
 Home-page: https://github.com/kamicollo/idendro-streamlit
 Author: Aurimas Racas
