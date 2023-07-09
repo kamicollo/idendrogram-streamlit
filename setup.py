@@ -2,11 +2,12 @@ import setuptools
 
 setuptools.setup(
     name="idendro-streamlit",
-    version="0.1",
+    version="0.1.1",
     author="Aurimas Racas",
     author_email="mail@aurimas.eu",
     description="Bi-directional Streamlit component for creating interactive dendrograms",
-    long_description="D3-powered bi-directional Streamlit component for idendro library that visualizes dendrograms created by hierarchical clustering algorithms (SciPy, scikit-learn and hdbscan compatible)",
+    long_description="""D3-powered bi-directional Streamlit component for idendro library that visualizes dendrograms 
+    created by hierarchical clustering algorithms (SciPy, scikit-learn and hdbscan compatible)""",
     long_description_content_type="text/plain",
     url="https://github.com/kamicollo/idendro-streamlit",
     packages=setuptools.find_packages(),
