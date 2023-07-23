@@ -1,1 +1,1 @@
-recursive-include idendro-streamlit/frontend/build *
+recursive-include idendrogram-streamlit-component/frontend/build *
