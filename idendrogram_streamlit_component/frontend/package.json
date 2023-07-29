@@ -1,6 +1,6 @@
 {
-  "name": "idendro_template",
-  "version": "0.1.0",
+  "name": "idendrogram-streamlit",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@types/d3": "^7.4.0",

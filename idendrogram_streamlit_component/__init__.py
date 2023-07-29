@@ -1,6 +1,6 @@
 """Bi-directional Streamlit component for creating interactive dendrograms"""
 
-__version__ = "0.1.5"
+__version__ = "0.2.0"
 
 
 import json
@@ -11,7 +11,7 @@ from idendrogram.containers import ClusterNode, Dendrogram
 from idendrogram.targets.json import to_json
 
 class StreamlitConverter:
-    def __init__(self, release: bool = False) -> None:
+    def __init__(self, release: bool = True) -> None:
         """Upon initialization, setup appropriate Streamlit component"""
 
         if not release:
