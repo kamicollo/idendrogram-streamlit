@@ -250,6 +250,9 @@ function draw_nodes(node_container: plot, nodes: ClusterNode[], xScale: scaleLin
     let mouseover = function (this: SVGCircleElement | SVGTextElement, e: MouseEvent, d: ClusterNode) {
         tooltip.style("opacity", 1)
         tooltip.style("display", "initial")
+        tooltip            
+            .style("left", e.x + "px")
+            .style("top", e.y + "px")        
 
         if (typeof(d.hovertext) === 'string') {
             tooltip.html(d.hovertext)
@@ -286,6 +289,8 @@ function draw_nodes(node_container: plot, nodes: ClusterNode[], xScale: scaleLin
 
     let click = function (this: SVGCircleElement | SVGTextElement, e: MouseEvent, d: ClusterNode) {
         Streamlit.setComponentValue(d)
+        tooltip.style("opacity", 0) 
+        tooltip.style("display", "none")         
     }
 
     elem.append("circle")
@@ -323,8 +328,7 @@ function onRender(event: Event): void {
     let dendrogram: Dendrogram = data.args['dendrogram']
     let scaleType: string = data.args['scale']
     let show_nodes: Boolean = data.args['show_nodes']    
-    let margin: Margin = { top: 50, right: 50, bottom: 50, left: 50 }
-    let label_margin_size = 200
+    let margin: Margin = data.args['margins']    
     let dimensions: Dimensions = {
         height: data.args['height'],
         width: data.args['width'],
@@ -333,11 +337,7 @@ function onRender(event: Event): void {
         innerWidth: 0,
         orientation: data.args['orientation']
     }
-
-    let margin_map = { 'top': Orientation.bottom, 'bottom': Orientation.top, 'left': Orientation.right, 'right': Orientation.left }
-    let label_margin: Orientation = margin_map[dimensions.orientation]
-
-    dimensions.margin[label_margin] = label_margin_size
+    
     dimensions.innerHeight = dimensions.height - dimensions.margin.top - dimensions.margin.bottom
     dimensions.innerWidth = dimensions.width - dimensions.margin.left - dimensions.margin.right
 
